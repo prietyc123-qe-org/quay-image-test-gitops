@@ -1,0 +1,12 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+commonLabels:         
+  argocd/app-name: quay-image
+  janus-idp.io/tekton: quay-image
+  backstage.io/kubernetes-id: quay-image
+  backstage.io/kubernetes-namespace: rhtap-app 
+  app.kubernetes.io/part-of: quay-image
+resources:
+- deployment.yaml
+- route.yaml
+- service.yaml

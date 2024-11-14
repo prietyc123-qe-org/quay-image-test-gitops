@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: quay-image-gitops
+  description: This is GitOps manifest for quay-image   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-name: quay-image
+    backstage.io/kubernetes-id: quay-image 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: quay-image   
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:quay-image
